@@ -6,8 +6,8 @@ from sklearn.cluster import KMeans
 #Read CSV
 Pokemon = pd.read_csv("Project2\smogon.csv")
 
-#List of controled vocabulary
-ControledVocabulary =  [
+#Controlled Vocabulary list
+ControlledVocabulary =  [
     'bug', 'dark', 'dragon', 'electric', 'fairy', 
     'fighting', 'fire', 'flying', 'ghost', 'grass',
     'ground', 'ice', 'poison', 'psychic', 'rock', 
@@ -15,14 +15,14 @@ ControledVocabulary =  [
 ]
 
 #Clean the data
-for TypePokemon in ControledVocabulary:
+for TypePokemon in ControlledVocabulary:
     Pokemon["moves"] = Pokemon["moves"].str.replace(TypePokemon, f" {TypePokemon} ", regex=False)
 
 Pokemon["moves"] = Pokemon["moves"].str.replace(r"\s+", " ", regex=True).str.strip()
 PokemonMoves = Pokemon["moves"]
 
 #Instances of TF-IDF
-TextToNumbersOfVocabulary = TfidfVectorizer(vocabulary=ControledVocabulary,ngram_range=(1,1))
+TextToNumbersOfVocabulary = TfidfVectorizer(vocabulary=ControlledVocabulary,ngram_range=(1,1))
 
 #Executing TF-IDF
 MatrixOf_TextToNumbersOfVocabulary = TextToNumbersOfVocabulary.fit_transform(PokemonMoves)
