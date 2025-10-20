@@ -94,6 +94,6 @@ PokemonDataSet["ClusterPokemones"] = PokemonDataSet["ClusterPokemones"].replace(
 
 ######### Muestra y conversion a CSV ########
 print(PokemonDataSet)
-PokemonDataSet.to_csv("Project/PokemonDataset(1).csv")
+PokemonDataSet.to_csv("Project1/PokemonDataset(Ejercicio1).csv")
 
 #############################################

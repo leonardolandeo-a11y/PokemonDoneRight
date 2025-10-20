@@ -76,4 +76,4 @@ PokemonDataSet.insert(0,"NombresPokemon",NombresPokemon)
 PokemonDataSet.insert(1,"TipoDominante",HabilidadMasFrecuente)
 
 print(PokemonDataSet)
-PokemonDataSet.to_csv("Project3/PokemonDataSet(3).csv")
+PokemonDataSet.to_csv("Project3/PokemonDataSet(Ejercicio3).csv")
