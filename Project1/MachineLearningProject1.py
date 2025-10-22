@@ -10,7 +10,7 @@ Líneas resaltantes:
         Utilizaremos KMeans, algoritmo esencial para realizar el agrupamiento.
     
     (50-51):
-        Realizamos la ejecución de TfidfVectorizer indicando que usaremos 1-grama, es decir, solo una palabra por elemento. Además, guardamos lo que nos devuelve el método de la instancia para poder usarlo posteriormente.
+        Realizamos la ejecución de TfidfVectorizer indicando que usaremos 1-grama y 2-grama, es decir, solo una palabra por elemento y luego 2 palabras por elemento. Además, guardamos lo que nos devuelve el método de la instancia para poder usarlo posteriormente.
 
     (56-57):
         Realizamos la ejecución de KMeans indicando 3 clusters, ya que dividiremos los clusters representaran que tan poderosa es una habilidad. Además, guardamos los clusters para usarlos posteriormente.
@@ -47,13 +47,13 @@ NombresPokemon = Pokemon["Pokemon"].copy()
 ###########################
 
 ######## TfidfVectorizer ########
-TFIDF = TfidfVectorizer(ngram_range=(1,1))
+TFIDF = TfidfVectorizer(ngram_range=(1,2))
 MatrixNumericaTFIDF = TFIDF.fit_transform(MovimientosPokemon).toarray()
 
 #################################
 
 ######## KMeans ########
-Cluster = KMeans(n_clusters=3) 
+Cluster = KMeans(n_clusters=3,n_init=10, random_state= 42) 
 PokemonesAgrupados = Cluster.fit(MatrixNumericaTFIDF).labels_
 
 ########################
