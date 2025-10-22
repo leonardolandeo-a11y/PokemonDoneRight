@@ -77,3 +77,13 @@ PokemonDataSet.insert(1,"TipoDominante",HabilidadMasFrecuente)
 
 print(PokemonDataSet)
 PokemonDataSet.to_csv("Project3/PokemonDataSet(Ejercicio3).csv")
+
+######## Agregacion de Habilidad dominante de Ejercicio 1 y 2 ########
+#Agregacion Ejercicio 1:
+PokemonDataSetEjercicio1 = pd.read_csv("Project1/PokemonDataset(Ejercicio1).csv")
+PokemonDataSetEjercicio1["TipoDominante"] = HabilidadMasFrecuente
+PokemonDataSetEjercicio1.to_csv("Project3/DatosConHabilidadMasFrecuente/PokemonDataSetConHabilidadMasFrecuente(Ejercicio1).csv")
+#Agregacion Ejercicio 2:
+PokemonDataSetEjercicio2 = pd.read_csv("Project2/PokemonDataSet(Ejercicio2).csv")
+PokemonDataSetEjercicio2["TipoDominante"] = HabilidadMasFrecuente
+PokemonDataSetEjercicio2.to_csv("Project3/DatosConHabilidadMasFrecuente/PokemonDataSetConHabilidadMasFrecuente(Ejercicio2).csv")

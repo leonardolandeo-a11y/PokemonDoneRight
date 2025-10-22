@@ -16,7 +16,7 @@ Líneas resaltantes:
         En este apartado del código realizaremos una limpieza de los datos. Como podemos observar, el texto dentro de la columna "moves" está junto (por ejemplo: "HolaMundo"). Para poder utilizar TfidfVectorizer, necesitamos que los datos estén separados por espacios (por ejemplo: "Hola Mundo"). El objetivo de esta parte del código es, a partir de nuestro vocabulario controlado, buscar en cada fila de la columna "moves" y, al momento de encontrar una coincidencia, agregarle un espacio a la izquierda y a la derecha de la palabra (por ejemplo, si el vocabulario contiene "Poison": "EjemploEjemploPoisonEjemplo" → "EjemploEjemplo Poison Ejemplo").
     
     (59-60):
-        Realizamos la ejecución de TfidfVectorizer indicando que usaremos 1-grama y 2-grama, es decir, solo una palabra por elemento y luego 2 palabras por elemento. Además, guardamos lo que nos devuelve el método de la instancia para poder usarlo posteriormente.
+        Realizamos la ejecución de TfidfVectorizer indicando que usaremos 1-grama, es decir, solo una palabra por elemento. Además, guardamos lo que nos devuelve el método de la instancia para poder usarlo posteriormente.
 
     (65-66):
         Realizamos la ejecución de KMeans indicando 17 clusters, ya que son la cantidad de tipos de Pokémon que existen dentro de nuestra base de datos. Además, guardamos los clusters para usarlos posteriormente.
@@ -62,7 +62,7 @@ MatrixNumericaTFIDF = TFIDF.fit_transform(MovimientoPokemon).toarray()
 #################################
 
 ######## KMeans ########
-Clusters = KMeans(n_clusters=17,n_init=10,random_state=42)
+Clusters = KMeans(n_clusters=17,n_init=100,random_state=42)
 PokemonesAgrupados = Clusters.fit(MatrixNumericaTFIDF).labels_
 
 ########################

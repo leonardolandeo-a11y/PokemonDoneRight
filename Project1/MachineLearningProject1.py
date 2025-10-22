@@ -53,7 +53,7 @@ MatrixNumericaTFIDF = TFIDF.fit_transform(MovimientosPokemon).toarray()
 #################################
 
 ######## KMeans ########
-Cluster = KMeans(n_clusters=3,n_init=10, random_state= 42) 
+Cluster = KMeans(n_clusters=3,n_init=100, random_state= 42) 
 PokemonesAgrupados = Cluster.fit(MatrixNumericaTFIDF).labels_
 
 ########################
