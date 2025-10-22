@@ -70,7 +70,7 @@ PokemonDataSet = pd.DataFrame(RepeticionesMatrixNumerica,columns=VocabularioCont
 
 #Obtencion de la habilidad dominante:
 HabilidadMasFrecuente= PokemonDataSet[VocabularioControlado].idxmax(axis = 1)
-
+print(f"Las palabras que mas se repiten (Tipo dominante) son:\n{HabilidadMasFrecuente}")
 #Agregacion final de datos:
 PokemonDataSet.insert(0,"NombresPokemon",NombresPokemon)
 PokemonDataSet.insert(1,"TipoDominante",HabilidadMasFrecuente)
